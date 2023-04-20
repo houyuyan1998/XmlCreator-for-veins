@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/new/map">
+        <file>1.png</file>
+        <file>2.png</file>
+    </qresource>
+    <qresource prefix="/new/xml/net">
+        <file>1.net.xml</file>
+        <file>2.net.xml</file>
+    </qresource>
+    <qresource prefix="/new/xml/rou">
+        <file>1.1.rou.xml</file>
+        <file>1.2.rou.xml</file>
+        <file>2.1.rou.xml</file>
+        <file>2.2.rou.xml</file>
+    </qresource>
+</RCC>
