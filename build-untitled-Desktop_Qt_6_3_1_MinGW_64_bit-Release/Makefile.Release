@@ -16,10 +16,10 @@ CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I../untitled -I. -IC:/Qt/6.3.1/mingw_64/include -IC:/Qt/6.3.1/mingw_64/include/QtWidgets -IC:/Qt/6.3.1/mingw_64/include/QtGui -IC:/Qt/6.3.1/mingw_64/include/QtCore -Irelease -I. -I/include -IC:/Qt/6.3.1/mingw_64/mkspecs/win32-g++ 
+INCPATH       = -I../untitled -I. -IC:/Users/86150/AppData/Local/Programs/Python/Python310/include -IC:/Qt/6.3.1/mingw_64/include -IC:/Qt/6.3.1/mingw_64/include/QtWidgets -IC:/Qt/6.3.1/mingw_64/include/QtGui -IC:/Qt/6.3.1/mingw_64/include/QtCore -Irelease -I. -I/include -IC:/Qt/6.3.1/mingw_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
-LIBS        =        C:\Qt\6.3.1\mingw_64\lib\libQt6Widgets.a C:\Qt\6.3.1\mingw_64\lib\libQt6Gui.a C:\Qt\6.3.1\mingw_64\lib\libQt6Core.a -lmingw32 C:\Qt\6.3.1\mingw_64\lib\libQt6EntryPoint.a -lshell32  
+LIBS        =        -LC:\Users\86150\AppData\Local\Programs\Python\Python310\libs -lpython310 C:\Qt\6.3.1\mingw_64\lib\libQt6Widgets.a C:\Qt\6.3.1\mingw_64\lib\libQt6Gui.a C:\Qt\6.3.1\mingw_64\lib\libQt6Core.a -lmingw32 C:\Qt\6.3.1\mingw_64\lib\libQt6EntryPoint.a -lshell32  
 QMAKE         = C:\Qt\6.3.1\mingw_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -58,7 +58,7 @@ OBJECTS       = release/main.o \
 		release/qrc_resource.o \
 		release/moc_mainwindow.o
 
-DIST          = 1.png ..\untitled\mainwindow.h ..\untitled\main.cpp \
+DIST          =  ..\untitled\mainwindow.h ..\untitled\main.cpp \
 		..\untitled\mainwindow.cpp
 QMAKE_TARGET  = untitled
 DESTDIR        = release\ #avoid trailing-slash linebreak
@@ -105,7 +105,6 @@ compiler_rcc_clean:
 release/qrc_resource.cpp: ../untitled/resource.qrc \
 		C:/Qt/6.3.1/mingw_64/bin/rcc.exe \
 		../untitled/2.png \
-		../untitled/1.png \
 		../untitled/2.1.rou.xml \
 		../untitled/1.1.rou.xml \
 		../untitled/2.2.rou.xml \
@@ -124,6 +123,104 @@ compiler_moc_header_make_all: release/moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) release\moc_mainwindow.cpp
 release/moc_mainwindow.cpp: ../untitled/mainwindow.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/Python.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/patchlevel.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyconfig.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymacconfig.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyport.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/exports.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymacro.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymath.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymem.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pymem.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/object.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/object.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/objimpl.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/objimpl.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/typeslots.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyhash.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pydebug.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/bytearrayobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/bytearrayobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/bytesobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/bytesobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/unicodeobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/unicodeobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/longobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/longintrepr.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/boolobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/floatobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/complexobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/rangeobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/memoryobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/tupleobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/tupleobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/listobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/listobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/dictobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/dictobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/odictobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/enumobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/setobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/methodobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/methodobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/moduleobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/funcobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/classobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/fileobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/fileobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pycapsule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/code.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/code.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyframe.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/traceback.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/traceback.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/sliceobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cellobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/iterobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/genobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pystate.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pystate.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/initconfig.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/abstract.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/abstract.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/descrobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/genericaliasobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/warnings.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/weakrefobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/structseq.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/namespaceobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/picklebufobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pytime.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/codecs.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyerrors.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pyerrors.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pythread.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/context.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/modsupport.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/compile.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/compile.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pythonrun.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pythonrun.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pylifecycle.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pylifecycle.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/ceval.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/ceval.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/sysmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/sysmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/osmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/intrcheck.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/import.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/import.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/bltinmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/eval.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pyctype.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pystrtod.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pystrcmp.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/fileutils.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/fileutils.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pyfpe.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/tracemalloc.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QMainWindow \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -200,6 +297,7 @@ release/moc_mainwindow.cpp: ../untitled/mainwindow.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qcontainerinfo.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qtaggedpointer.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qmath.h \
+		release/map \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qbindingstorage.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qmargins.h \
@@ -260,7 +358,7 @@ release/moc_mainwindow.cpp: ../untitled/mainwindow.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtabwidget.h \
 		release/moc_predefs.h \
 		C:/Qt/6.3.1/mingw_64/bin/moc.exe
-	C:\Qt\6.3.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/Qt/try1/build-untitled-Desktop_Qt_6_3_1_MinGW_64_bit-Release/release/moc_predefs.h -IC:/Qt/6.3.1/mingw_64/mkspecs/win32-g++ -ID:/Qt/try1/untitled -IC:/Qt/6.3.1/mingw_64/include -IC:/Qt/6.3.1/mingw_64/include/QtWidgets -IC:/Qt/6.3.1/mingw_64/include/QtGui -IC:/Qt/6.3.1/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\untitled\mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\6.3.1\mingw_64\bin\moc.exe $(DEFINES) --include D:/Qt/try1/build-untitled-Desktop_Qt_6_3_1_MinGW_64_bit-Release/release/moc_predefs.h -IC:/Qt/6.3.1/mingw_64/mkspecs/win32-g++ -ID:/Qt/try1/untitled -IC:/Users/86150/AppData/Local/Programs/Python/Python310/include -IC:/Qt/6.3.1/mingw_64/include -IC:/Qt/6.3.1/mingw_64/include/QtWidgets -IC:/Qt/6.3.1/mingw_64/include/QtGui -IC:/Qt/6.3.1/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\untitled\mainwindow.h -o release\moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -286,6 +384,104 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 ####### Compile
 
 release/main.o: ../untitled/main.cpp ../untitled/mainwindow.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/Python.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/patchlevel.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyconfig.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymacconfig.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyport.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/exports.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymacro.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymath.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymem.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pymem.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/object.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/object.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/objimpl.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/objimpl.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/typeslots.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyhash.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pydebug.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/bytearrayobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/bytearrayobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/bytesobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/bytesobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/unicodeobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/unicodeobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/longobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/longintrepr.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/boolobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/floatobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/complexobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/rangeobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/memoryobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/tupleobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/tupleobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/listobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/listobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/dictobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/dictobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/odictobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/enumobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/setobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/methodobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/methodobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/moduleobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/funcobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/classobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/fileobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/fileobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pycapsule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/code.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/code.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyframe.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/traceback.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/traceback.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/sliceobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cellobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/iterobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/genobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pystate.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pystate.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/initconfig.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/abstract.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/abstract.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/descrobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/genericaliasobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/warnings.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/weakrefobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/structseq.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/namespaceobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/picklebufobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pytime.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/codecs.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyerrors.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pyerrors.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pythread.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/context.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/modsupport.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/compile.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/compile.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pythonrun.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pythonrun.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pylifecycle.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pylifecycle.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/ceval.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/ceval.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/sysmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/sysmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/osmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/intrcheck.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/import.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/import.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/bltinmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/eval.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pyctype.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pystrtod.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pystrcmp.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/fileutils.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/fileutils.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pyfpe.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/tracemalloc.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QMainWindow \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -362,6 +558,7 @@ release/main.o: ../untitled/main.cpp ../untitled/mainwindow.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qcontainerinfo.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qtaggedpointer.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qmath.h \
+		release/map \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qbindingstorage.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qmargins.h \
@@ -444,6 +641,104 @@ release/main.o: ../untitled/main.cpp ../untitled/mainwindow.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\untitled\main.cpp
 
 release/mainwindow.o: ../untitled/mainwindow.cpp ../untitled/mainwindow.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/Python.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/patchlevel.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyconfig.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymacconfig.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyport.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/exports.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymacro.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymath.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pymem.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pymem.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/object.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/object.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/objimpl.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/objimpl.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/typeslots.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyhash.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pydebug.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/bytearrayobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/bytearrayobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/bytesobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/bytesobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/unicodeobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/unicodeobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/longobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/longintrepr.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/boolobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/floatobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/complexobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/rangeobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/memoryobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/tupleobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/tupleobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/listobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/listobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/dictobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/dictobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/odictobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/enumobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/setobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/methodobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/methodobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/moduleobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/funcobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/classobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/fileobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/fileobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pycapsule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/code.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/code.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyframe.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/traceback.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/traceback.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/sliceobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cellobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/iterobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/genobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pystate.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pystate.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/initconfig.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/abstract.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/abstract.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/descrobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/genericaliasobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/warnings.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/weakrefobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/structseq.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/namespaceobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/picklebufobject.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pytime.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/codecs.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pyerrors.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pyerrors.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pythread.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/context.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/modsupport.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/compile.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/compile.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pythonrun.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pythonrun.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pylifecycle.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pylifecycle.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/ceval.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/ceval.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/sysmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/sysmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/osmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/intrcheck.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/import.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/import.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/bltinmodule.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/eval.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pyctype.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pystrtod.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/pystrcmp.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/fileutils.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/fileutils.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/cpython/pyfpe.h \
+		C:/Users/86150/AppData/Local/Programs/Python/Python310/include/tracemalloc.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QMainWindow \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -520,6 +815,7 @@ release/mainwindow.o: ../untitled/mainwindow.cpp ../untitled/mainwindow.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qcontainerinfo.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qtaggedpointer.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qmath.h \
+		release/map \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qbindingstorage.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/qmargins.h \
@@ -656,7 +952,8 @@ release/mainwindow.o: ../untitled/mainwindow.cpp ../untitled/mainwindow.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qdialog.h \
 		C:/Qt/6.3.1/mingw_64/include/QtCore/QFile \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qmessagebox.h
+		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt/6.3.1/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\untitled\mainwindow.cpp
 
 release/qrc_resource.o: release/qrc_resource.cpp 

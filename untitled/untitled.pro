@@ -23,8 +23,14 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES += \
-    1.png
+DISTFILES +=
 
 RESOURCES += \
     resource.qrc
+
+win32: LIBS += -LC:/Users/86150/AppData/Local/Programs/Python/Python310/libs/ -lpython310
+
+INCLUDEPATH += C:/Users/86150/AppData/Local/Programs/Python/Python310/include
+DEPENDPATH += C:/Users/86150/AppData/Local/Programs/Python/Python310/include
+
+

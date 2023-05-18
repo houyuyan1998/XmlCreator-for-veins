@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/new/map">
-        <file>1.png</file>
         <file>2.png</file>
     </qresource>
     <qresource prefix="/new/xml/net">

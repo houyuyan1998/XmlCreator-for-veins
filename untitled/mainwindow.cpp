@@ -7,18 +7,24 @@
 #include <QFileDialog>
 #include <QFile>
 #include <QMessageBox>
+#include <QDebug>
+#include <string.h>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QImage img(":new/map/1.png");
+
+    QString appPath=qApp->applicationDirPath();
+    QString mapPath=appPath+"/map/cross.png";
+    QImage img(mapPath);
     QImage imgs;
     imgs=img.scaled(ui->label_4->size());
     ui->label_4->setPixmap(QPixmap::fromImage(imgs));
 
-    ui->comboBox->addItem("1");
+    ui->comboBox->addItem("cross");
     ui->comboBox->addItem("2");
 
     ui->comboBox_2->addItem("1");
@@ -35,8 +41,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_comboBox_currentTextChanged(const QString &arg1)
 {
-    if(arg1.compare("1")==0){
-        QImage img(":new/map/1.png");
+    if(arg1.compare("cross")==0){
+        QString appPath=qApp->applicationDirPath();
+        QString mapPath=appPath+"/map/cross.png";
+        QImage img(mapPath);
         QImage imgs;
         imgs=img.scaled(ui->label_4->size());
         ui->label_4->setPixmap(QPixmap::fromImage(imgs));
@@ -105,5 +113,63 @@ void MainWindow::on_pushButton_clicked()
     writefile.close();
 
     QMessageBox::information(this,"message","success","ok");
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    QString appPath=qApp->applicationDirPath();
+    qDebug("%s",qPrintable(appPath));
+    QString sysPath="sys.path.append('"+appPath+"')";
+    qDebug("%s",qPrintable(sysPath));
+    QByteArray changetoChar=sysPath.toLatin1();
+
+    Py_Initialize();
+    if(!Py_IsInitialized())
+        qDebug()<<"initial failed";
+
+    PyRun_SimpleString("import sys");
+    PyRun_SimpleString("import random");
+    PyRun_SimpleString("import re");
+    PyRun_SimpleString("sys.argv=['python.py']") ;
+    PyRun_SimpleString("sys.path.append('./')");
+    PyRun_SimpleString(changetoChar);
+
+    PyObject* obj = PyImport_ImportModule("randomGenerator");
+    if(!obj){
+        qDebug()<<"no file";
+    }
+    PyObject* pfunc=PyObject_GetAttrString(obj,"library");
+    if(!pfunc){
+        qDebug()<<"no function";
+    }
+
+    QString netPath=appPath+"/net/"+ui->comboBox->currentText()+".net.xml";
+    changetoChar=netPath.toLatin1();
+    char* address1=changetoChar.data();
+    qDebug("%s",address1);
+
+    int step=20;
+    step=ui->textEdit_3->toPlainText().toInt();
+    qDebug("%d",step);
+    int n=1000;
+    n=ui->textEdit_4->toPlainText().toInt();
+    qDebug("%d",n);
+
+    QString copyPath=ui->textEdit_2->toPlainText();
+    copyPath=copyPath+"/"+ui->textEdit_6->toPlainText()+".rou.xml";
+    changetoChar=copyPath.toLatin1();
+    char* address2=changetoChar.data();
+    qDebug("%s",address2);
+
+    PyObject* para=PyTuple_New(4);
+    PyTuple_SET_ITEM(para,0,Py_BuildValue("i",step));
+    PyTuple_SET_ITEM(para,1,Py_BuildValue("i",n));
+    PyTuple_SET_ITEM(para,2,Py_BuildValue("s",address1));
+    PyTuple_SET_ITEM(para,3,Py_BuildValue("s",address2));
+
+    PyObject* FuncBack=PyObject_CallObject(pfunc,para);
+
+    Py_Finalize();
 }
 

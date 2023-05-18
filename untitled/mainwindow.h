@@ -1,5 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#include "C:/Users/86150/AppData/Local/Programs/Python/Python310/include/Python.h"
 
 #include <QMainWindow>
 
@@ -21,6 +22,8 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::MainWindow *ui;
