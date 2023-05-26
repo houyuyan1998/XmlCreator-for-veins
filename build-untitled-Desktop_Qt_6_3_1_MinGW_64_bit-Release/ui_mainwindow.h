@@ -69,7 +69,7 @@ public:
         pushButton->setGeometry(QRect(690, 510, 93, 29));
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(480, 30, 261, 201));
+        gridLayoutWidget->setGeometry(QRect(480, 30, 261, 191));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -147,10 +147,10 @@ public:
 
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(10, 30, 480, 270));
+        label_4->setGeometry(QRect(10, 30, 471, 270));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(410, 440, 361, 51));
+        layoutWidget->setGeometry(QRect(410, 440, 361, 31));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -174,7 +174,7 @@ public:
         pushButton_3->setGeometry(QRect(570, 510, 111, 29));
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(470, 370, 271, 41));
+        horizontalLayoutWidget->setGeometry(QRect(470, 388, 271, 31));
         horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);

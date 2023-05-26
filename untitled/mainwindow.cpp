@@ -71,6 +71,55 @@ void MainWindow::on_pushButton_clicked()
     QString path=ui->textEdit_2->toPlainText();
     QString net=ui->comboBox->currentText();
     QString rou=ui->comboBox_2->currentText();
+
+    QString appPath=qApp->applicationDirPath();
+    qDebug("%s",qPrintable(appPath));
+    QString sysPath="sys.path.append('"+appPath+"')";
+    qDebug("%s",qPrintable(sysPath));
+    QByteArray changetoChar=sysPath.toLatin1();
+
+    Py_Initialize();
+    if(!Py_IsInitialized())
+        qDebug()<<"initial failed";
+
+    PyRun_SimpleString("import sys");
+    PyRun_SimpleString("import random");
+    PyRun_SimpleString("import re");
+    PyRun_SimpleString("sys.argv=['python.py']") ;
+    PyRun_SimpleString("sys.path.append('./')");
+    PyRun_SimpleString(changetoChar);
+
+    PyObject* obj = PyImport_ImportModule("routeMixer");
+    if(!obj){
+        qDebug()<<"no file";
+    }
+    PyObject* pfunc=PyObject_GetAttrString(obj,"mixer");
+    if(!pfunc){
+        qDebug()<<"no function";
+    }
+
+    QString libPath=ui->textEdit_2->toPlainText()+"/"+ui->textEdit_6->toPlainText();
+    changetoChar=libPath.toLatin1();
+    char* address1=changetoChar.data();
+    qDebug("%s",address1);
+
+    int n=20;
+    n=ui->textEdit->toPlainText().toInt();
+    qDebug("%d",n);
+    int CircleRate=50;
+    CircleRate=ui->textEdit_5->toPlainText().toInt();
+    qDebug("%d",CircleRate);
+
+    PyObject* para=PyTuple_New(3);
+    PyTuple_SET_ITEM(para,0,Py_BuildValue("i",n));
+    PyTuple_SET_ITEM(para,1,Py_BuildValue("i",CircleRate));
+    PyTuple_SET_ITEM(para,2,Py_BuildValue("s",address1));
+
+    PyObject* FuncBack=PyObject_CallObject(pfunc,para);
+
+    Py_Finalize();
+
+    /*
     QFile::copy(":new/xml/net/"+net+".net.xml",path+"/"+net+".net.xml");
 
     QString str;
@@ -113,6 +162,7 @@ void MainWindow::on_pushButton_clicked()
     writefile.close();
 
     QMessageBox::information(this,"message","success","ok");
+    */
 }
 
 
