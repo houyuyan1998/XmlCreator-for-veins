@@ -31,18 +31,18 @@ public:
     QPushButton *pushButton;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QLabel *label;
-    QLabel *label_3;
-    QComboBox *comboBox_2;
     QLabel *label_7;
-    QTextEdit *textEdit_4;
-    QLabel *label_2;
-    QLabel *label_6;
-    QTextEdit *textEdit;
-    QTextEdit *textEdit_3;
+    QComboBox *comboBox_2;
     QComboBox *comboBox;
-    QLabel *label_8;
+    QTextEdit *textEdit_4;
     QTextEdit *textEdit_5;
+    QTextEdit *textEdit_3;
+    QLabel *label_3;
+    QLabel *label_6;
+    QLabel *label_2;
+    QLabel *label_8;
+    QTextEdit *textEdit;
+    QLabel *label;
     QLabel *label_4;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
@@ -69,10 +69,68 @@ public:
         pushButton->setGeometry(QRect(690, 510, 93, 29));
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(480, 30, 261, 191));
+        gridLayoutWidget->setGeometry(QRect(470, 40, 271, 181));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        label_7 = new QLabel(gridLayoutWidget);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+
+        gridLayout->addWidget(label_7, 4, 0, 1, 1);
+
+        comboBox_2 = new QComboBox(gridLayoutWidget);
+        comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
+
+        gridLayout->addWidget(comboBox_2, 1, 1, 1, 1);
+
+        comboBox = new QComboBox(gridLayoutWidget);
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setMinimumSize(QSize(0, 26));
+
+        gridLayout->addWidget(comboBox, 0, 1, 1, 1);
+
+        textEdit_4 = new QTextEdit(gridLayoutWidget);
+        textEdit_4->setObjectName(QString::fromUtf8("textEdit_4"));
+
+        gridLayout->addWidget(textEdit_4, 4, 1, 1, 1);
+
+        textEdit_5 = new QTextEdit(gridLayoutWidget);
+        textEdit_5->setObjectName(QString::fromUtf8("textEdit_5"));
+
+        gridLayout->addWidget(textEdit_5, 6, 1, 1, 1);
+
+        textEdit_3 = new QTextEdit(gridLayoutWidget);
+        textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
+
+        gridLayout->addWidget(textEdit_3, 3, 1, 1, 1);
+
+        label_3 = new QLabel(gridLayoutWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        gridLayout->addWidget(label_3, 1, 0, 1, 1);
+
+        label_6 = new QLabel(gridLayoutWidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+
+        gridLayout->addWidget(label_6, 3, 0, 1, 1);
+
+        label_2 = new QLabel(gridLayoutWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout->addWidget(label_2, 0, 0, 1, 1);
+
+        label_8 = new QLabel(gridLayoutWidget);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+
+        gridLayout->addWidget(label_8, 6, 0, 1, 1);
+
+        textEdit = new QTextEdit(gridLayoutWidget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setFocusPolicy(Qt::StrongFocus);
+        textEdit->setAcceptDrops(true);
+
+        gridLayout->addWidget(textEdit, 5, 1, 1, 1);
+
         label = new QLabel(gridLayoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -85,65 +143,7 @@ public:
         label->setLineWidth(1);
         label->setMidLineWidth(0);
 
-        gridLayout->addWidget(label, 2, 0, 1, 1);
-
-        label_3 = new QLabel(gridLayoutWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        gridLayout->addWidget(label_3, 1, 0, 1, 1);
-
-        comboBox_2 = new QComboBox(gridLayoutWidget);
-        comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
-
-        gridLayout->addWidget(comboBox_2, 1, 1, 1, 1);
-
-        label_7 = new QLabel(gridLayoutWidget);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-
-        gridLayout->addWidget(label_7, 4, 0, 1, 1);
-
-        textEdit_4 = new QTextEdit(gridLayoutWidget);
-        textEdit_4->setObjectName(QString::fromUtf8("textEdit_4"));
-
-        gridLayout->addWidget(textEdit_4, 4, 1, 1, 1);
-
-        label_2 = new QLabel(gridLayoutWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        gridLayout->addWidget(label_2, 0, 0, 1, 1);
-
-        label_6 = new QLabel(gridLayoutWidget);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-
-        gridLayout->addWidget(label_6, 3, 0, 1, 1);
-
-        textEdit = new QTextEdit(gridLayoutWidget);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setFocusPolicy(Qt::StrongFocus);
-        textEdit->setAcceptDrops(true);
-
-        gridLayout->addWidget(textEdit, 2, 1, 1, 1);
-
-        textEdit_3 = new QTextEdit(gridLayoutWidget);
-        textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
-
-        gridLayout->addWidget(textEdit_3, 3, 1, 1, 1);
-
-        comboBox = new QComboBox(gridLayoutWidget);
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setMinimumSize(QSize(0, 26));
-
-        gridLayout->addWidget(comboBox, 0, 1, 1, 1);
-
-        label_8 = new QLabel(gridLayoutWidget);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-
-        gridLayout->addWidget(label_8, 5, 0, 1, 1);
-
-        textEdit_5 = new QTextEdit(gridLayoutWidget);
-        textEdit_5->setObjectName(QString::fromUtf8("textEdit_5"));
-
-        gridLayout->addWidget(textEdit_5, 5, 1, 1, 1);
+        gridLayout->addWidget(label, 5, 0, 1, 1);
 
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
@@ -174,7 +174,7 @@ public:
         pushButton_3->setGeometry(QRect(570, 510, 111, 29));
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(470, 388, 271, 31));
+        horizontalLayoutWidget->setGeometry(QRect(470, 370, 271, 31));
         horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -206,17 +206,17 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "generate", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">number of cars</span></p></body></html>", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">route</span></p></body></html>", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">library scale</span></p></body></html>", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">map</span></p></body></html>", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">route</span></p></body></html>", nullptr));
         label_6->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">most of steps</span></p></body></html>", nullptr));
-        label_8->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">rate of circle<br/></span></p></body></html>", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">map</span></p></body></html>", nullptr));
+        label_8->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">rate of loop<br/></span></p></body></html>", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">number of cars</span></p></body></html>", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p>123</p></body></html>", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "target", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "target folder", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "folder", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "library refresh", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "filename", nullptr));
+        label_9->setText(QCoreApplication::translate("MainWindow", "target filename", nullptr));
     } // retranslateUi
 
 };
