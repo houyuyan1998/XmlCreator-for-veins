@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "C:/Users/86150/AppData/Local/Programs/Python/Python310/include/Python.h"
+
 
 #include <QMainWindow>
 

@@ -9,6 +9,11 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <string.h>
+#include <cmath>
+#define _hypot hypot
+#undef slots
+#include<Python.h>
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -146,6 +151,7 @@ void MainWindow::on_pushButton_clicked()
             qDebug("%s",qPrintable(sysPath));
             QByteArray changetoChar=sysPath.toLatin1();
 
+            Py_SetPythonHome((wchar_t *)(L"./Python310"));
             Py_Initialize();
             if(!Py_IsInitialized())
                 qDebug()<<"initial failed";
@@ -207,6 +213,7 @@ void MainWindow::on_pushButton_clicked()
         qDebug("%s",qPrintable(sysPath));
         QByteArray changetoChar=sysPath.toLatin1();
 
+        Py_SetPythonHome((wchar_t *)(L"./Python310"));
         Py_Initialize();
         if(!Py_IsInitialized())
             qDebug()<<"initial failed";
@@ -307,6 +314,7 @@ void MainWindow::on_pushButton_3_clicked()
     qDebug("%s",qPrintable(sysPath));
     QByteArray changetoChar=sysPath.toLatin1();
 
+    Py_SetPythonHome((wchar_t *)(L"./Python310"));
     Py_Initialize();
     if(!Py_IsInitialized())
         qDebug()<<"initial failed";
